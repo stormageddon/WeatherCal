@@ -1,27 +1,18 @@
 //************************************************************
-//	This assignment written for SE 441-02
+//	This Project is a simple alarm clock that will change
+//    the song played based on the weather outside. The
+//    point of it is really for me to play around with
+//    learning git better, as well as to experiment
+//    with the Google Weather API.
 //************************************************************
-//
-//	$Id: $
-//
-//	$Date: $
-//
-//	Reason: <describe the purpose of this class>
-//
-//*************************************************************
 
-/** $Author: $ */
-/** $Revision: $ */
+/** $Author: Michael Caputo */
+
 
 // specify the package
-
-// system imports
-
-// project includes
- 
-//==============================================================
 package network;
 
+// system imports
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.MalformedURLException;
@@ -35,10 +26,14 @@ import org.w3c.dom.Document;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 
+// project includes
+
+//==============================================================
+
 public class GoogleGateway implements Gateway {
 
 	
-	private final String address = "http://www.google.com/ig/api?weather=$";
+	private final String URL_ADDRESS = "http://www.google.com/ig/api?weather=$";
 	
 	@Override
 	public Document getWeatherData( String location ) {
@@ -49,7 +44,7 @@ public class GoogleGateway implements Gateway {
             DocumentBuilderFactory docBuilderFactory = DocumentBuilderFactory.newInstance();
             DocumentBuilder docBuilder = docBuilderFactory.newDocumentBuilder();
             
-            URL test = new URL( address + location);
+            URL test = new URL( URL_ADDRESS + location);
 			doc = docBuilder.parse((InputStream)test.getContent());
 			
 		} catch (MalformedURLException e) {

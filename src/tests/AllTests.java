@@ -31,7 +31,9 @@ import org.junit.runners.Suite;
 import org.junit.runners.Suite.SuiteClasses;
 
 @RunWith(Suite.class)
-@SuiteClasses({})
+@SuiteClasses({
+	GoogleGatewayTest.class
+})
 public class AllTests {
 	GoogleGatewayTest test = new GoogleGatewayTest();
 	
