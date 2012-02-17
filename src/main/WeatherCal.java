@@ -1,4 +1,8 @@
 package main;
+
+import network.Gateway;
+import network.GoogleGateway;
+
 //************************************************************
 //	This Project is a simple alarm clock that will change
 //    the song played based on the weather outside. The
@@ -25,7 +29,8 @@ public class WeatherCal {
 	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		System.out.println( "Testing" );
+		Gateway googleGate = new GoogleGateway();
+		googleGate.getWeatherData("rochester");
 	}
 
 }
